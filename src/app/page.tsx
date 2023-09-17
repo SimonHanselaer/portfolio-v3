@@ -4,11 +4,10 @@ import styled from "styled-components";
 
 import { Icon, Heading } from "@/components";
 import { colors } from "@/utils/foundations";
-import { getBackground } from "@/utils/styles";
-import { Intro, Projects, Skills } from "@/app/_components";
+import { Contact, Intro, Projects, Skills, About, CV } from "@/app/_components";
 
 const Main = styled.main`
-  padding: 0 32px;
+  padding: 0 32px 16px;
 `;
 
 const Header = styled.header`
@@ -30,24 +29,6 @@ const Content = styled.section`
   width: 100%;
 `;
 
-const Contact = styled.section`
-  grid-area: contact;
-
-  ${getBackground({ rotation: "west" })};
-`;
-
-const About = styled.section`
-  grid-area: about;
-
-  ${getBackground({ rotation: "east" })};
-`;
-
-const CV = styled.section`
-  grid-area: cv;
-
-  ${getBackground({ rotation: "south" })};
-`;
-
 export default function Home() {
   return (
     <Main>
@@ -59,13 +40,9 @@ export default function Home() {
         <Intro />
         <Skills />
         <Projects />
-        <Contact>
-          <Heading tag="h2">Contact</Heading>
-        </Contact>
-        <About>
-          <Heading tag="h2">About Me</Heading>
-        </About>
-        <CV></CV>
+        <Contact />
+        <About />
+        <CV />
       </Content>
     </Main>
   );
