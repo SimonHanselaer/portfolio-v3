@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styled from "styled-components";
-import { Subtitle, Text } from "@/components";
+
+import { Text } from "@/components";
 
 const Card = styled.li`
   border-radius: 12px;
