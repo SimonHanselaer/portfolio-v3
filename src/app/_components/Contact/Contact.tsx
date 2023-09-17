@@ -19,6 +19,7 @@ const Section = styled.section`
 const ContactLinks = styled.ul`
   display: flex;
   gap: 16px;
+  margin-top: 16px;
 `;
 
 const ContactLink = styled.li`

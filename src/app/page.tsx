@@ -22,10 +22,10 @@ const Header = styled.header`
 const Content = styled.section`
   display: grid;
   grid-template-columns: repeat(2, auto) 448px;
-  grid-template-rows: 490px 510px 256px;
-  grid-template-areas: "intro intro skills" "projects projects projects" "contact about cv";
-  gap: 24px;
+  grid-template-rows: 490px 510px 152px 152px;
+  grid-template-areas: "intro intro skills" "projects projects projects" "about about contact" "about about cv";
 
+  gap: 24px;
   width: 100%;
 `;
 

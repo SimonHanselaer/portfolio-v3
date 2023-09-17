@@ -1,6 +1,7 @@
 import useSWR from "swr";
 import { contentful } from "@/utils";
 import { sortBy } from "lodash";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 type IContentType = "project" | "skill" | "information" | "contact";
 
@@ -14,10 +15,11 @@ export type IContactLink = { link: string; icon: string; id: number };
 export type IContactLinks = IContactLink[];
 
 export type IInformationItem = {
-  title: string;
-  link: string;
-  icon: string;
   id: number;
+  title: string;
+  text: string;
+
+  link: string;
 };
 export type IInformationItems = IInformationItem[];
 
@@ -92,10 +94,7 @@ export function useData(contentType: IContentType) {
             id: item.fields.id,
             title: item.fields.title,
             link: item.fields.link,
-            icon: (item.fields?.icon as any)?.fields.file.url.replace(
-              "//",
-              "https://"
-            ),
+            text: documentToReactComponents(item.fields.text as any),
           })) as IInformationItems,
           "id"
         ),

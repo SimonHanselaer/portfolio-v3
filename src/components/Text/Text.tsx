@@ -11,6 +11,7 @@ const TextComponent = styled.p`
   font-family: ${sen.style.fontFamily}, sans-serif;
   color: ${colors.base.primary};
   font-size: 16px;
+  line-height: 18px;
 `;
 
 export const Text = ({ children, ...rest }: IHeading) => {

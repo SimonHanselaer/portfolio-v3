@@ -1,11 +1,6 @@
-import useSWR from "swr";
-import Link from "next/link";
-import Image from "next/image";
-import { sortBy } from "lodash";
 import styled from "styled-components";
 
-import { contentful } from "@/utils";
-import { Heading, Text } from "@/components";
+import { Heading, Subtitle, Text } from "@/components";
 import { getBackground } from "@/utils/styles";
 import { useData } from "@/utils/hooks";
 
@@ -19,28 +14,24 @@ const Section = styled.section`
 
 const ItemContainer = styled.ul`
   display: flex;
-  gap: 16px;
+  justify-content: flex-start;
+
+  gap: 32px;
+
+  margin-top: 16px;
 `;
 
 const Item = styled.li`
-  border-radius: 12px;
+  width: 33%;
+  max-width: 344px;
+`;
 
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
-  backdrop-filter: blur(20px);
-  background: linear-gradient(
-    108.84deg,
-    rgba(255, 255, 255, 0.4) 3.96%,
-    rgba(255, 255, 255, 0.1) 95.1%
-  );
-
-  padding: 16px;
+const StyledText = styled(Text)`
+  margin-top: 12px;
 
   display: flex;
-  align-items: center;
   flex-direction: column;
-  justify-content: flex-end;
-
-  gap: 12px;
+  gap: 16px;
 `;
 
 export const About = () => {
@@ -51,19 +42,13 @@ export const About = () => {
       <Heading tag="h2">About Me</Heading>
       <ItemContainer>
         {items?.map((item, index) => {
-          const content = (
+          console.log(item);
+          return (
             <Item key={`information-item-${index}`}>
-              <Image src={item.icon} alt={item.title} height={32} width={32} />
-              <Text>{item.title}</Text>
+              <Subtitle>{item.title}</Subtitle>
+              <StyledText>{item.text}</StyledText>
             </Item>
           );
-          if (item.link)
-            return (
-              <Link key={`information-link-${index}`} href={item.link}>
-                {content}
-              </Link>
-            );
-          return content;
         })}
       </ItemContainer>
     </Section>
