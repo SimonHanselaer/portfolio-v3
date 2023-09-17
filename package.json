@@ -12,11 +12,18 @@
     "@types/node": "20.2.1",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
+    "@types/styled-components": "^5.1.26",
+    "@types/styled-system": "^5.1.16",
+    "contentful": "^10.2.0",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.3",
     "next": "13.4.3",
+    "prettier": "^2.8.8",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "styled-components": "^6.0.0-rc.1",
+    "styled-system": "^5.1.5",
+    "swr": "^2.1.5",
     "typescript": "5.0.4"
   }
 }
