@@ -1,12 +1,12 @@
-import { Subtitle, Text } from "@/components";
 import styled from "styled-components";
 
-const Wrapper = styled.article`
+import { Subtitle, Text } from "@/components";
+import { getBackground } from "@/utils/styles";
+
+const Wrapper = styled.section`
   grid-area: intro;
 
-  border-radius: 12px;
-  background-size: cover;
-  background-image: url("/backgrounds/intro.svg");
+  ${getBackground({ rotation: "north" })};
 
   padding: 24px;
 

@@ -6,7 +6,7 @@ import { Heading } from "@/components";
 import { SkillCard } from "./components";
 import { Wrapper, Cards } from "./styles";
 
-const fetcher = async (query) => {
+const fetcher = async (query: string) => {
   console.log("fetch skills");
   const entries = await contentful.getEntries({ content_type: query });
   return entries.items

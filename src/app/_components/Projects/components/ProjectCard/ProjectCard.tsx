@@ -12,20 +12,24 @@ const Card = styled.li`
     rgba(255, 255, 255, 0.2) 95.1%
   );
 
-  width: 340px;
-
   padding: 16px;
 
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  flex: 0 0 340px;
 `;
 
-export const ProjectCard = () => {
+interface IProjectCard {
+  title: string;
+  description: string;
+}
+
+export const ProjectCard = ({ title, description }: IProjectCard) => {
   return (
     <Card>
-      <Subtitle>OQTON</Subtitle>
-      <Text>Accelerating Intelligent Manufacturing</Text>
+      <Subtitle>{title}</Subtitle>
+      <Text>{description}</Text>
     </Card>
   );
 };

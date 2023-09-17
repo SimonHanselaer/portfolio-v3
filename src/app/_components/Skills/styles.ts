@@ -1,11 +1,10 @@
 import styled from "styled-components";
+import { getBackground } from "@/utils/styles";
 
-export const Wrapper = styled.article`
+export const Wrapper = styled.section`
   grid-area: skills;
 
-  border-radius: 12px;
-  background-size: cover;
-  background-image: url("/backgrounds/skills.svg");
+  ${getBackground({ rotation: "west" })};
 
   padding: 16px;
 `;

@@ -2,8 +2,9 @@
 
 import styled from "styled-components";
 
-import { colors } from "@/utils/foundations";
 import { Icon, Heading } from "@/components";
+import { colors } from "@/utils/foundations";
+import { getBackground } from "@/utils/styles";
 import { Intro, Projects, Skills } from "@/app/_components";
 
 const Main = styled.main`
@@ -29,16 +30,22 @@ const Content = styled.section`
   width: 100%;
 `;
 
-const Contact = styled.article`
+const Contact = styled.section`
   grid-area: contact;
+
+  ${getBackground({ rotation: "west" })};
 `;
 
-const About = styled.article`
+const About = styled.section`
   grid-area: about;
+
+  ${getBackground({ rotation: "east" })};
 `;
 
-const CV = styled.article`
+const CV = styled.section`
   grid-area: cv;
+
+  ${getBackground({ rotation: "south" })};
 `;
 
 export default function Home() {
