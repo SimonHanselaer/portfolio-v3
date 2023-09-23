@@ -1,7 +1,15 @@
+import Image from "next/image";
 import styled from "styled-components";
 import { Subtitle, Text } from "@/components";
 
 const Card = styled.li`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 300px;
+  padding: 16px;
+
   border-radius: 12px;
 
   backdrop-filter: blur(20px);
@@ -11,25 +19,32 @@ const Card = styled.li`
     rgba(255, 255, 255, 0.8) 3.96%,
     rgba(255, 255, 255, 0.2) 95.1%
   );
-
-  padding: 16px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  flex: 0 0 340px;
 `;
 
 interface IProjectCard {
   title: string;
   description: string;
+  thumbnail: string;
 }
 
-export const ProjectCard = ({ title, description }: IProjectCard) => {
+export const ProjectCard = ({
+  title,
+  description,
+  thumbnail,
+}: IProjectCard) => {
   return (
     <Card>
-      <Subtitle>{title}</Subtitle>
-      <Text>{description}</Text>
+      <Image
+        src={thumbnail}
+        alt={title}
+        width={200}
+        height={200}
+        style={{ alignSelf: "center" }}
+      />
+      <div>
+        <Subtitle>{title}</Subtitle>
+        <Text>{description}</Text>
+      </div>
     </Card>
   );
 };

@@ -6,9 +6,9 @@ import { ISkill, useData } from "@/utils/hooks";
 import { SkillCard } from "./components";
 import { Wrapper, Cards } from "./styles";
 
-const getCards = (skills: ISkill[]) => {
+const getCards = (skills: ISkill[] | undefined) => {
   return range(5).map((v, index) => {
-    if (skills[index]) {
+    if (skills?.[index]) {
       const skill = skills[index];
       return (
         <SkillCard key={skill.title} title={skill.title} img={skill.logo} />

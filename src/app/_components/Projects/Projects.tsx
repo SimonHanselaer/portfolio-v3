@@ -17,13 +17,11 @@ const Wrapper = styled.section`
 `;
 
 const Cards = styled.ul`
-  display: flex;
-  height: 432px;
+  margin-top: 16px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-
-  margin-top: 12px;
-
-  overflow: auto;
 `;
 
 export const Projects = () => {
