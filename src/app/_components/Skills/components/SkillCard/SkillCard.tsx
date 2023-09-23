@@ -14,14 +14,9 @@ const Card = styled.li`
     rgba(255, 255, 255, 0.1) 95.1%
   );
 
-  padding: 16px;
-
   display: flex;
   align-items: center;
-  flex-direction: column;
-  justify-content: flex-end;
-
-  gap: 12px;
+  justify-content: center;
 `;
 
 interface ISkillCard {
@@ -32,8 +27,7 @@ interface ISkillCard {
 export const SkillCard = ({ title, img }: ISkillCard) => {
   return (
     <Card>
-      <Image src={img} alt={title} height={48} width={48} />
-      <Text>{title}</Text>
+      <Image src={img} alt={title} height={32} width={32} />
     </Card>
   );
 };

@@ -1,6 +1,6 @@
 import useSWR from "swr";
 import { contentful } from "@/utils";
-import { sortBy } from "lodash";
+import { groupBy, sortBy } from "lodash";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 type IContentType = "project" | "skill" | "information" | "contact";
@@ -8,8 +8,14 @@ type IContentType = "project" | "skill" | "information" | "contact";
 export type IProject = { title: string; description: string };
 export type IProjects = IProject[];
 
-export type ISkill = { title: string; level: number; logo: string };
-export type ISkills = ISkill[];
+export type ISkill = {
+  title: string;
+  level: number;
+  logo: string;
+  type: string;
+  priority: number;
+};
+export type ISkills = { [key: string]: ISkill[] };
 
 export type IContactLink = { link: string; icon: string; id: number };
 export type IContactLinks = IContactLink[];
@@ -57,16 +63,21 @@ export function useData(contentType: IContentType) {
       };
     case "skill":
       return {
-        skills: sortBy(
-          data?.items.map((item) => ({
-            title: item.fields.title,
-            level: item.fields.level,
-            logo: (item.fields.logo as any)?.fields.file.url.replace(
-              "//",
-              "https://"
-            ),
-          })) as ISkills,
-          "level"
+        skills: groupBy(
+          sortBy(
+            data?.items.map((item) => ({
+              title: item.fields.title,
+              level: item.fields.level,
+              type: item.fields.type,
+              priority: item.fields.priority,
+              logo: (item.fields.logo as any)?.fields.file.url.replace(
+                "//",
+                "https://"
+              ),
+            })) as ISkill[],
+            "priority"
+          ),
+          "type"
         ),
         isLoading,
         isError: error,

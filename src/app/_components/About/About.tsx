@@ -41,15 +41,12 @@ export const About = () => {
     <Section>
       <Heading tag="h2">About Me</Heading>
       <ItemContainer>
-        {items?.map((item, index) => {
-          console.log(item);
-          return (
-            <Item key={`information-item-${index}`}>
-              <Subtitle>{item.title}</Subtitle>
-              <StyledText>{item.text}</StyledText>
-            </Item>
-          );
-        })}
+        {items?.map((item, index) => (
+          <Item key={`information-item-${index}`}>
+            <Subtitle>{item.title}</Subtitle>
+            <StyledText>{item.text}</StyledText>
+          </Item>
+        ))}
       </ItemContainer>
     </Section>
   );

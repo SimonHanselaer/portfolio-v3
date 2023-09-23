@@ -11,9 +11,9 @@ export const Wrapper = styled.section`
 
 export const Cards = styled.ul`
   display: grid;
-  grid-template-rows: repeat(3, 128px);
-  grid-template-columns: repeat(3, 128px);
+  grid-template-rows: repeat(5, 73.5px);
+  grid-template-columns: repeat(5, 73.5px);
 
-  gap: 16px;
+  gap: 12px;
   margin-top: 12px;
 `;
