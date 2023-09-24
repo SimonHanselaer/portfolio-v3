@@ -3,12 +3,12 @@ import { SubtitleH2, SubtitleH3, SubtitleDefault } from "./styles";
 
 type ITag = "h2" | "h3";
 
-export type IHeading = {
+export type ISubtitle = {
   children: React.ReactNode;
   tag?: ITag;
 };
 
-export const Subtitle = ({ children, tag, ...rest }: IHeading) => {
+export const Subtitle = ({ children, tag, ...rest }: ISubtitle) => {
   switch (tag) {
     case "h2":
       return <SubtitleH2 {...rest}>{children}</SubtitleH2>;
