@@ -8,6 +8,10 @@ import { Contact, Intro, Projects, Skills, About, CV } from "@/app/_components";
 
 const Main = styled.main`
   padding: 0 32px 16px;
+
+  @media (max-width: 540px) {
+    padding: 0 16px 16px;
+  }
 `;
 
 const Header = styled.header`
@@ -30,7 +34,7 @@ const Content = styled.section`
 
   @media (max-width: 1084px) {
     grid-template-columns: 1fr;
-    grid-template-rows: 490px auto 490px auto auto auto;
+    grid-template-rows: 490px repeat(5, auto);
     grid-template-areas: "intro" "projects" "skills" "about" "contact" "cv";
   }
 `;

@@ -20,4 +20,14 @@ export const Cards = styled.ul`
 
   gap: 12px;
   margin-top: 12px;
+
+  @media (max-width: 540px) {
+    grid-template-rows: repeat(5, 54px);
+    grid-template-columns: repeat(5, 54px);
+  }
+
+  @media (max-width: 400px) {
+    grid-template-rows: repeat(5, 40px);
+    grid-template-columns: repeat(5, 40px);
+  }
 `;

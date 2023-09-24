@@ -26,6 +26,10 @@ const Cards = styled.ul`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, auto));
   gap: 16px;
+
+  @media (max-width: 400px) {
+    grid-template-columns: repeat(auto-fill, minmax(248px, auto));
+  }
 `;
 
 export const Projects = () => {

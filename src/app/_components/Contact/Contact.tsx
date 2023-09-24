@@ -11,7 +11,7 @@ import { useData } from "@/utils/hooks";
 const Section = styled.section`
   grid-area: contact;
 
-  padding: 24px;
+  padding: 16px;
 
   ${getBackground({ rotation: "west" })};
 
