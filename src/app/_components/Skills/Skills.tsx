@@ -23,7 +23,7 @@ export const Skills = () => {
 
   return (
     <Wrapper>
-      <Heading tag="h2">Skills</Heading>
+      <Heading tag="h2">Toolbox</Heading>
       <Cards>
         {getCards(skills.basic)}
         {getCards(skills.framework)}

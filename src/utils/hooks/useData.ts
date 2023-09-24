@@ -1,6 +1,6 @@
 import useSWR from "swr";
 import { contentful } from "@/utils";
-import { groupBy, sortBy } from "lodash";
+import { filter, groupBy, sortBy } from "lodash";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 type IContentType = "project" | "skill" | "information" | "contact";
@@ -9,6 +9,8 @@ export type IProject = {
   title: string;
   description: string;
   thumbnail: string;
+  priority: number;
+  href: string;
 };
 export type IProjects = IProject[];
 
@@ -58,18 +60,21 @@ export function useData(contentType: IContentType) {
   switch (contentType) {
     case "project":
       return {
-        projects: sortBy(
-          data?.items.map((item) => ({
-            title: item.fields.title,
-            description: item.fields.description,
-            priority: item.fields.priority,
-            thumbnail: (item.fields.icon as any)?.fields.file.url.replace(
-              "//",
-              "https://"
-            ),
-          })),
-          "priority"
-        ) as IProjects,
+        projects: (
+          sortBy(
+            data?.items.map((item) => ({
+              title: item.fields.title,
+              description: item.fields.description,
+              priority: item.fields.priority,
+              href: (item.fields.resources as { href: string }[])?.[0]?.href,
+              thumbnail: (item.fields.icon as any)?.fields.file.url.replace(
+                "//",
+                "https://"
+              ),
+            })),
+            "priority"
+          ) as IProjects
+        ).filter((project) => project.priority > 0),
         isLoading,
         isError: error,
       };

@@ -20,7 +20,7 @@ const Cards = styled.ul`
   margin-top: 16px;
 
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(320px, auto));
   gap: 16px;
 `;
 
