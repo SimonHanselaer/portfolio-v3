@@ -14,6 +14,10 @@ const Wrapper = styled.section`
   ${getBackground({ rotation: "east" })}
 
   padding: 16px;
+
+  @media (max-width: 1084px) {
+    ${getBackground({ rotation: "east" })};
+  }
 `;
 
 const Cards = styled.ul`

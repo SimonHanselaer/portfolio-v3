@@ -10,20 +10,35 @@ const Section = styled.section`
   padding: 24px;
 
   ${getBackground({ rotation: "east" })};
+
+  @media (max-width: 1084px) {
+    ${getBackground({ rotation: "east" })};
+  }
 `;
 
 const ItemContainer = styled.ul`
-  display: flex;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 
   gap: 32px;
 
   margin-top: 16px;
+
+  @media (max-width: 1680px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 1330px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 const Item = styled.li`
-  width: 33%;
   max-width: 344px;
+
+  @media (max-width: 1680px) {
+    max-width: 400px;
+  }
 `;
 
 const StyledText = styled(Text)`
@@ -44,7 +59,7 @@ export const About = () => {
         {items?.map((item, index) => (
           <Item key={`information-item-${index}`}>
             <Subtitle>{item.title}</Subtitle>
-            <StyledText>{item.text}</StyledText>
+            <StyledText tag="div">{item.text}</StyledText>
           </Item>
         ))}
       </ItemContainer>

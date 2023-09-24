@@ -7,6 +7,10 @@ export const Wrapper = styled.section`
   ${getBackground({ rotation: "west" })};
 
   padding: 16px;
+
+  @media (max-width: 1084px) {
+    ${getBackground({ rotation: "north" })};
+  }
 `;
 
 export const Cards = styled.ul`

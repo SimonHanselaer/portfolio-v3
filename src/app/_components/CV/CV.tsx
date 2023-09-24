@@ -8,6 +8,10 @@ const Section = styled.section`
   padding: 24px;
 
   ${getBackground({ rotation: "south" })};
+
+  @media (max-width: 1084px) {
+    ${getBackground({ rotation: "east" })};
+  }
 `;
 
 export const CV = () => {

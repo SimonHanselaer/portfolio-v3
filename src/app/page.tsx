@@ -21,12 +21,18 @@ const Header = styled.header`
 
 const Content = styled.section`
   display: grid;
-  grid-template-columns: repeat(2, auto) 448px;
-  grid-template-rows: 490px auto 152px 152px;
+  grid-template-columns: 448px auto 448px;
+  grid-template-rows: 490px auto 152px auto;
   grid-template-areas: "intro intro skills" "projects projects projects" "about about contact" "about about cv";
 
   gap: 24px;
   width: 100%;
+
+  @media (max-width: 1084px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 490px auto 490px auto auto auto;
+    grid-template-areas: "intro" "projects" "skills" "about" "contact" "cv";
+  }
 `;
 
 export default function Home() {

@@ -14,15 +14,28 @@ const Section = styled.section`
   padding: 24px;
 
   ${getBackground({ rotation: "west" })};
+
+  @media (max-width: 1084px) {
+    ${getBackground({ rotation: "north" })};
+  }
 `;
 
 const ContactLinks = styled.ul`
-  display: flex;
-  gap: 16px;
-  margin-top: 16px;
+  display: grid;
+  grid-template-rows: repeat(1, 73.5px);
+  grid-template-columns: repeat(3, 73.5px);
+
+  gap: 12px;
+  margin-top: 12px;
 `;
 
 const ContactLink = styled.li`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+
   border-radius: 12px;
 
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
@@ -32,15 +45,6 @@ const ContactLink = styled.li`
     rgba(255, 255, 255, 0.4) 3.96%,
     rgba(255, 255, 255, 0.1) 95.1%
   );
-
-  padding: 16px;
-
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: flex-end;
-
-  gap: 12px;
 `;
 
 export const Contact = () => {
