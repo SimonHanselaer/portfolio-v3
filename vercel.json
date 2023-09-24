@@ -1,0 +1,6 @@
+{
+  "crons": [{
+    "path": "/api/cron/incredibleCollectible/index",
+    "schedule": "1 8 * * 0"
+  }]
+}
