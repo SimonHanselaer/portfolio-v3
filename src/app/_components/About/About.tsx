@@ -18,7 +18,7 @@ const Section = styled.section`
 
 const ItemContainer = styled.ul`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 344px);
 
   gap: 32px;
 
