@@ -21,14 +21,15 @@ const textStyles = {
   "line-height": "18px",
 };
 
+const Div = styled.div(() => textStyles);
+const P = styled.p(() => textStyles);
+
 export const Text = ({ children, tag, ...rest }: IText) => {
   switch (tag) {
     case "div":
-      const Div = styled.div(() => textStyles);
       return <Div {...rest}>{children}</Div>;
     case "p":
     default:
-      const P = styled.p(() => textStyles);
       return <P {...rest}>{children}</P>;
   }
 };
