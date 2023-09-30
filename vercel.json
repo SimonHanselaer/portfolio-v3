@@ -1,6 +1,6 @@
 {
   "crons": [{
-    "path": "/api/cron/incredibleCollectible/insertVote",
+    "path": "/api/cron/incredibleCollectible/route",
     "schedule": "1 8 * * 0"
   }]
 }
