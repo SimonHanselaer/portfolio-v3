@@ -1,6 +1,12 @@
 {
-  "crons": [{
+  "crons": [
+    {
     "path": "/api/cron/incredibleCollectible",
     "schedule": "1 8 * * 0"
-  }]
+    },
+    {
+      "path": "/api/cron/bxl",
+      "schedule": "1 8 * * 1"
+    }
+  ]
 }
