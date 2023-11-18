@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
-export async function GET(request: NextRequest) {
+export async function bxl(request: NextRequest) {
   //Create a single supabase client for interacting with your database
   const supabase = createClient(
     "https://ppgpmnmillhwrpkzltzf.supabase.co",

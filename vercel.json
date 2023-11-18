@@ -1,12 +1,8 @@
 {
   "crons": [
     {
-    "path": "/api/cron/incredibleCollectible",
-    "schedule": "1 8 * * 0"
-    },
-    {
-      "path": "/api/cron/bxl",
-      "schedule": "1 8 * * 1"
+    "path": "/api/cron/dispatcher",
+    "schedule": "0 0 * * 1,4"
     }
   ]
 }
