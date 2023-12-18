@@ -2,15 +2,16 @@
 
 import styled from "styled-components";
 
-import { Icon, Heading } from "@/components";
-import { colors } from "@/utils/foundations";
+import { Heading } from "@/theme";
+import { Icon } from "@/components";
+import { colors } from "@/theme/foundations";
 import { Contact, Intro, Projects, Skills, About, CV } from "@/app/_components";
 
 const Main = styled.main`
-  padding: 0 32px 16px;
+  padding: 0 ${(p) => p.theme.spacing.xl}px ${(p) => p.theme.spacing.m}px;
 
   @media (max-width: 540px) {
-    padding: 0 16px 16px;
+    padding: 0 ${(p) => p.theme.spacing.m}px ${(p) => p.theme.spacing.m}px;
   }
 `;
 
@@ -20,7 +21,7 @@ const Header = styled.header`
   display: flex;
   align-items: center;
 
-  gap: 12px;
+  gap: ${(p) => p.theme.spacing.s}px;
 `;
 
 const Content = styled.section`
@@ -29,7 +30,7 @@ const Content = styled.section`
   grid-template-rows: 490px auto 152px auto;
   grid-template-areas: "intro intro skills" "projects projects projects" "about about contact" "about about cv";
 
-  gap: 24px;
+  gap: ${(p) => p.theme.spacing.l}px;
   width: 100%;
 
   @media (max-width: 1084px) {
@@ -44,7 +45,7 @@ export default function Home() {
     <Main>
       <Header>
         <Icon name="Logo" size={32} color={colors.base.primary} />
-        <Heading tag="h1">Simon Hanselaer</Heading>
+        <Heading as="h1">Simon Hanselaer</Heading>
       </Header>
       <Content>
         <Intro />

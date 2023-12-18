@@ -1,6 +1,6 @@
 import { range } from "lodash";
 
-import { Heading } from "@/components";
+import { Heading } from "@/theme";
 import { ISkill, useData } from "@/utils/hooks";
 
 import { SkillCard } from "./components";
@@ -23,7 +23,7 @@ export const Skills = () => {
 
   return (
     <Wrapper>
-      <Heading tag="h2">Toolbox</Heading>
+      <Heading as="h2">Toolbox</Heading>
       <Cards>
         {getCards(skills.basic)}
         {getCards(skills.framework)}

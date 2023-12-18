@@ -1,28 +1,24 @@
 import styled from "styled-components";
 
-import { Heading, Subtitle, Text } from "@/components";
-import { getBackground } from "@/utils/styles";
 import { useData } from "@/utils/hooks";
+import { getBackground } from "@/utils/styles";
+import { Heading, Subtitle, Text } from "@/theme";
 
 const Section = styled.section`
   grid-area: about;
 
-  padding: 24px;
+  padding: ${(p) => p.theme.spacing.l}px;
 
   ${getBackground({ rotation: "east" })};
-
-  @media (max-width: 1084px) {
-    ${getBackground({ rotation: "east" })};
-  }
 `;
 
 const ItemContainer = styled.ul`
   display: grid;
   grid-template-columns: repeat(3, 344px);
 
-  gap: 32px;
+  gap: ${(p) => p.theme.spacing.xl}px;
 
-  margin-top: 16px;
+  margin-top: ${(p) => p.theme.spacing.m}px;
 
   @media (max-width: 1680px) {
     grid-template-columns: repeat(2, 1fr);
@@ -42,11 +38,11 @@ const Item = styled.li`
 `;
 
 const StyledText = styled(Text)`
-  margin-top: 12px;
+  margin-top: ${(p) => p.theme.spacing.s}px;
 
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: ${(p) => p.theme.spacing.m}px;
 `;
 
 export const About = () => {
@@ -54,12 +50,12 @@ export const About = () => {
 
   return (
     <Section>
-      <Heading tag="h2">About Me</Heading>
+      <Heading as="h2">About Me</Heading>
       <ItemContainer>
         {items?.map((item, index) => (
           <Item key={`information-item-${index}`}>
             <Subtitle>{item.title}</Subtitle>
-            <StyledText tag="div">{item.text}</StyledText>
+            <StyledText as="div">{item.text}</StyledText>
           </Item>
         ))}
       </ItemContainer>

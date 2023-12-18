@@ -1,19 +1,17 @@
-import useSWR from "swr";
 import styled from "styled-components";
 
-import { contentful } from "@/utils";
-import { Heading } from "@/components";
+import { Heading } from "@/theme";
+import { useData } from "@/utils/hooks";
 import { getBackground } from "@/utils/styles";
 
 import { ProjectCard } from "./components";
-import { useData } from "@/utils/hooks";
 
 const Wrapper = styled.section`
   grid-area: projects;
 
   ${getBackground({ rotation: "east" })}
 
-  padding: 16px;
+  padding: ${(p) => p.theme.spacing.m}px;
 
   @media (max-width: 1084px) {
     ${getBackground({ rotation: "east" })};
@@ -21,11 +19,11 @@ const Wrapper = styled.section`
 `;
 
 const Cards = styled.ul`
-  margin-top: 16px;
+  margin-top: ${(p) => p.theme.spacing.m}px;
 
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, auto));
-  gap: 16px;
+  gap: ${(p) => p.theme.spacing.m}px;
 
   @media (max-width: 400px) {
     grid-template-columns: repeat(auto-fill, minmax(248px, auto));
@@ -37,7 +35,7 @@ export const Projects = () => {
 
   return (
     <Wrapper>
-      <Heading tag="h2">Projects</Heading>
+      <Heading as="h2">Projects</Heading>
       <Cards>
         {projects?.map((project, index) => (
           <ProjectCard key={`project-${index}`} {...project} />

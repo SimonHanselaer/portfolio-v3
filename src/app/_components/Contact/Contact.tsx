@@ -1,17 +1,15 @@
-import { sortBy } from "lodash";
+import Link from "next/link";
+import Image from "next/image";
 import styled from "styled-components";
 
-import { getBackground } from "@/utils/styles";
-import { Heading, Text } from "@/components";
-import useSWR from "swr";
-import Image from "next/image";
-import Link from "next/link";
+import { Heading } from "@/theme";
 import { useData } from "@/utils/hooks";
+import { getBackground } from "@/utils/styles";
 
 const Section = styled.section`
   grid-area: contact;
 
-  padding: 16px;
+  padding: ${(p) => p.theme.spacing.m}px;
 
   ${getBackground({ rotation: "west" })};
 
@@ -25,8 +23,8 @@ const ContactLinks = styled.ul`
   grid-template-rows: repeat(1, 73.5px);
   grid-template-columns: repeat(3, 73.5px);
 
-  gap: 12px;
-  margin-top: 12px;
+  gap: ${(p) => p.theme.spacing.s}px;
+  margin-top: ${(p) => p.theme.spacing.s}px;
 `;
 
 const ContactLink = styled.li`
@@ -36,7 +34,7 @@ const ContactLink = styled.li`
 
   height: 100%;
 
-  border-radius: 12px;
+  border-radius: ${(p) => p.theme.spacing.s}px;
 
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(20px);
@@ -52,7 +50,7 @@ export const Contact = () => {
 
   return (
     <Section>
-      <Heading tag="h2">Contact</Heading>
+      <Heading as="h2">Contact</Heading>
       <ContactLinks>
         {links?.map((item, index) => (
           <Link key={`link-${index}`} href={item.link}>

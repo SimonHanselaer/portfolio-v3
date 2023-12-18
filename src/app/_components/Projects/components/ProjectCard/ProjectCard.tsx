@@ -3,15 +3,15 @@ import Image from "next/image";
 import styled from "styled-components";
 
 import { IProject } from "@/utils/hooks";
-import { Subtitle, Text } from "@/components";
+import { Subtitle, Text, Tag } from "@/theme";
 
 const Card = styled.li`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
-  padding: 16px;
-  border-radius: 12px;
+  padding: ${(p) => p.theme.spacing.m}px;
+  border-radius: ${(p) => p.theme.spacing.s}px;
 
   backdrop-filter: blur(20px);
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
@@ -22,27 +22,25 @@ const Card = styled.li`
   );
 `;
 
-const TagContainer = styled.ul`
+const TagsContainer = styled.ul`
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: ${(p) => p.theme.spacing.s}px;
+  right: ${(p) => p.theme.spacing.s}px;
 
   display: flex;
   flex-wrap: wrap;
   max-width: 128px;
   justify-content: flex-end;
 
-  gap: 4px;
+  gap: ${(p) => p.theme.spacing.xxs}px;
 `;
 
-const Tag = styled(Text)<{ color: string }>`
-  padding: 4px;
+const TagWrapper = styled(Tag)<{ color: string }>`
+  padding: ${(p) => p.theme.spacing.xxs}px;
   border-radius: 6px;
 
-  font-size: 12px;
-
   background-color: ${(p) => p.color};
-  color: white;
+  color: ${(p) => p.theme.colors.base.white};
 
   white-space: nowrap;
 `;
@@ -57,13 +55,13 @@ export const ProjectCard = ({
   return (
     <Link href={href} target="_blank">
       <Card>
-        <TagContainer>
+        <TagsContainer>
           {tags.map((tag, index) => (
-            <Tag key={`tag-${index}`} color={tag.color}>
+            <TagWrapper key={`tag-${index}`} color={tag.color}>
               {tag.name}
-            </Tag>
+            </TagWrapper>
           ))}
-        </TagContainer>
+        </TagsContainer>
         <Image
           src={thumbnail}
           alt={title}

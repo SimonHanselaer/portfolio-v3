@@ -2,7 +2,7 @@ import Image from "next/image";
 import styled from "styled-components";
 
 const Card = styled.li`
-  border-radius: 12px;
+  border-radius: ${(p) => p.theme.spacing.s}px;
 
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(20px);

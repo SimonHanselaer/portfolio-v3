@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { Subtitle, Text } from "@/components";
+import { Subtitle, Text } from "@/theme";
 import { getBackground } from "@/utils/styles";
 
 const Wrapper = styled.section`
@@ -8,7 +8,7 @@ const Wrapper = styled.section`
 
   ${getBackground({ rotation: "north" })};
 
-  padding: 24px;
+  padding: ${(p) => p.theme.spacing.l}px;
 
   display: flex;
   flex-direction: column;
@@ -16,13 +16,13 @@ const Wrapper = styled.section`
 `;
 
 const Title = styled(Subtitle)`
-  margin-bottom: 8px;
+  margin-bottom: ${(p) => p.theme.spacing.xs}px;
 `;
 
 export const Intro = () => {
   return (
     <Wrapper>
-      <Title tag="h2">
+      <Title as="h2">
         Hi! I&#39;m Simon Hanselaer,
         <br /> a front-end developer.
       </Title>

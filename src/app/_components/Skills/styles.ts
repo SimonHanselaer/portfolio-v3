@@ -6,7 +6,7 @@ export const Wrapper = styled.section`
 
   ${getBackground({ rotation: "west" })};
 
-  padding: 16px;
+  padding: ${(p) => p.theme.spacing.m}px;
 
   @media (max-width: 1084px) {
     ${getBackground({ rotation: "north" })};
@@ -18,8 +18,8 @@ export const Cards = styled.ul`
   grid-template-rows: repeat(5, 73.5px);
   grid-template-columns: repeat(5, 73.5px);
 
-  gap: 12px;
-  margin-top: 12px;
+  gap: ${(p) => p.theme.spacing.s}px;
+  margin-top: ${(p) => p.theme.spacing.s}px;
 
   @media (max-width: 540px) {
     grid-template-rows: repeat(5, auto);

@@ -1,11 +1,12 @@
 import styled from "styled-components";
+
+import { Heading } from "@/theme";
 import { getBackground } from "@/utils/styles";
-import { Heading } from "@/components";
 
 const Section = styled.section`
   grid-area: cv;
 
-  padding: 24px;
+  padding: ${(p) => p.theme.spacing.l}px;
 
   ${getBackground({ rotation: "south" })};
 
@@ -17,7 +18,7 @@ const Section = styled.section`
 export const CV = () => {
   return (
     <Section>
-      <Heading tag="h2">CV</Heading>
+      <Heading as="h2">CV</Heading>
     </Section>
   );
 };
