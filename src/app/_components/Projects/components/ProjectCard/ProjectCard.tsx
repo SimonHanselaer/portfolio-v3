@@ -1,7 +1,9 @@
+import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
+
+import { IProject } from "@/utils/hooks";
 import { Subtitle, Text } from "@/components";
-import Link from "next/link";
 
 const Card = styled.li`
   display: flex;
@@ -20,22 +22,48 @@ const Card = styled.li`
   );
 `;
 
-interface IProjectCard {
-  title: string;
-  description: string;
-  thumbnail: string;
-  href: string;
-}
+const TagContainer = styled.ul`
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 128px;
+  justify-content: flex-end;
+
+  gap: 4px;
+`;
+
+const Tag = styled(Text)<{ color: string }>`
+  padding: 4px;
+  border-radius: 6px;
+
+  font-size: 12px;
+
+  background-color: ${(p) => p.color};
+  color: white;
+
+  white-space: nowrap;
+`;
 
 export const ProjectCard = ({
   title,
   description,
   thumbnail,
   href,
-}: IProjectCard) => {
+  tags,
+}: IProject) => {
   return (
     <Link href={href} target="_blank">
       <Card>
+        <TagContainer>
+          {tags.map((tag, index) => (
+            <Tag key={`tag-${index}`} color={tag.color}>
+              {tag.name}
+            </Tag>
+          ))}
+        </TagContainer>
         <Image
           src={thumbnail}
           alt={title}

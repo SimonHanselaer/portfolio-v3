@@ -27,8 +27,6 @@ export const Intro = () => {
         <br /> a front-end developer.
       </Title>
       <Text>
-        Making the web look beautiful one pixel at a time.
-        <br />
         Passionate about coding and pushing my skills to the next level.
         <br />
         Always up for a challenge and ready to learn something new!
