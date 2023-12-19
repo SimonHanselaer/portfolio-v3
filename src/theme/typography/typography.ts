@@ -19,7 +19,7 @@ export const Text = styled.p`
   font-family: ${(p) => p.theme.fonts.secondary.style.fontFamily}, sans-serif;
   color: ${(p) => p.theme.colors.base.primary};
   font-size: ${(p) => p.theme.fontSizes.s}px;
-  line-height: 18px;
+  line-height: 20px;
 `;
 
 export const Tag = styled(Text)`

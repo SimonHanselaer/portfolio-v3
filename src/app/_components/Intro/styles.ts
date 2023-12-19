@@ -17,3 +17,11 @@ export const Wrapper = styled.section`
 export const Title = styled(Subtitle)`
   margin-bottom: ${({ theme }) => theme.spacing.xs}px;
 `;
+
+export const TextWrapper = styled.section`
+  max-width: 492px;
+
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing.s}px;
+`;

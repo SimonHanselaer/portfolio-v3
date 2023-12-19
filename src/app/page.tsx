@@ -30,10 +30,10 @@ const Content = styled.section`
   grid-template-rows: 490px auto 152px auto;
   grid-template-areas: "intro intro skills" "projects projects projects" "about about contact" "about about cv";
 
-  gap: ${(p) => p.theme.spacing.l}px;
+  gap: ${({ theme }) => theme.spacing.l}px;
   width: 100%;
 
-  @media (max-width: ${(p) => p.theme.mediaQueries.m}px) {
+  @media (max-width: ${({ theme }) => theme.mediaQueries.m}px) {
     grid-template-columns: 1fr;
     grid-template-rows: 490px repeat(5, auto);
     grid-template-areas: "intro" "projects" "skills" "about" "contact" "cv";
@@ -52,7 +52,7 @@ export default function Home() {
         <Skills />
         <Projects />
         <Contact />
-        <About />
+        {/*<About />*/}
         <CV />
       </Content>
     </Main>
