@@ -1,23 +1,6 @@
-import styled from "styled-components";
+import { Text } from "@/theme";
 
-import { Subtitle, Text } from "@/theme";
-import { getBackground } from "@/utils/styles";
-
-const Wrapper = styled.section`
-  grid-area: intro;
-
-  ${getBackground({ rotation: "north" })};
-
-  padding: ${(p) => p.theme.spacing.l}px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-`;
-
-const Title = styled(Subtitle)`
-  margin-bottom: ${(p) => p.theme.spacing.xs}px;
-`;
+import { Wrapper, Title } from "./styles";
 
 export const Intro = () => {
   return (

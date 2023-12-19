@@ -10,7 +10,7 @@ import { Contact, Intro, Projects, Skills, About, CV } from "@/app/_components";
 const Main = styled.main`
   padding: 0 ${(p) => p.theme.spacing.xl}px ${(p) => p.theme.spacing.m}px;
 
-  @media (max-width: 540px) {
+  @media (max-width: ${(p) => p.theme.mediaQueries.s}px) {
     padding: 0 ${(p) => p.theme.spacing.m}px ${(p) => p.theme.spacing.m}px;
   }
 `;
@@ -33,7 +33,7 @@ const Content = styled.section`
   gap: ${(p) => p.theme.spacing.l}px;
   width: 100%;
 
-  @media (max-width: 1084px) {
+  @media (max-width: ${(p) => p.theme.mediaQueries.m}px) {
     grid-template-columns: 1fr;
     grid-template-rows: 490px repeat(5, auto);
     grid-template-areas: "intro" "projects" "skills" "about" "contact" "cv";

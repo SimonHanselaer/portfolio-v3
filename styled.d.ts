@@ -1,5 +1,12 @@
 import "styled-components";
-import { Colors, Fonts, fontSizes, spacing } from "@/theme/foundations";
+import {
+  Colors,
+  Fonts,
+  fontSizes,
+  spacing,
+  mediaQueries,
+  boxShadows,
+} from "@/theme/foundations";
 
 declare module "styled-components" {
   export interface DefaultTheme {
@@ -7,5 +14,7 @@ declare module "styled-components" {
     fonts: Fonts;
     fontSizes: typeof fontSizes;
     spacing: typeof spacing;
+    mediaQueries: typeof mediaQueries;
+    boxShadows: typeof boxShadows;
   }
 }

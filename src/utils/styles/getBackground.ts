@@ -1,6 +1,7 @@
-import { css } from "styled-components";
+import { css, DefaultTheme } from "styled-components";
 
 type IRotation = "north" | "east" | "south" | "west";
+
 const getRotation = (rotation: IRotation) => {
   switch (rotation) {
     case "north":
@@ -14,14 +15,20 @@ const getRotation = (rotation: IRotation) => {
   }
 };
 
-export const getBackground = ({ rotation }: { rotation: IRotation }) => {
+export const getBackground = ({
+  rotation,
+  theme,
+}: {
+  rotation: IRotation;
+  theme: DefaultTheme;
+}) => {
   return css`
     border-radius: 12px;
     background: linear-gradient(
       ${getRotation(rotation)}deg,
-      #d3dae2 ${Math.random() * 15}%,
-      #f5f6f5 ${Math.random() * (65 - 35) + 35}%,
-      #f8eecc ${Math.random() * (100 - 85) + 85}%
+      ${theme.colors.gradients.primary.start} ${Math.random() * 15}%,
+      ${theme.colors.gradients.primary.mid} ${Math.random() * (65 - 35) + 35}%,
+      ${theme.colors.gradients.primary.end} ${Math.random() * (100 - 85) + 85}%
     );
   `;
 };

@@ -4,12 +4,12 @@ import { getBackground } from "@/utils/styles";
 export const Wrapper = styled.section`
   grid-area: skills;
 
-  ${getBackground({ rotation: "west" })};
+  ${({ theme }) => getBackground({ rotation: "west", theme })};
 
-  padding: ${(p) => p.theme.spacing.m}px;
+  padding: ${({ theme }) => theme.spacing.m}px;
 
-  @media (max-width: 1084px) {
-    ${getBackground({ rotation: "north" })};
+  @media (max-width: ${({ theme }) => theme.mediaQueries.m}px) {
+    ${({ theme }) => getBackground({ rotation: "north", theme })};
   }
 `;
 
@@ -17,11 +17,11 @@ export const Cards = styled.ul`
   display: grid;
   grid-template-rows: repeat(5, 73.5px);
   grid-template-columns: repeat(5, 73.5px);
+  gap: ${({ theme }) => theme.spacing.s}px;
 
-  gap: ${(p) => p.theme.spacing.s}px;
-  margin-top: ${(p) => p.theme.spacing.s}px;
+  margin-top: ${({ theme }) => theme.spacing.s}px;
 
-  @media (max-width: 540px) {
+  @media (max-width: ${({ theme }) => theme.mediaQueries.s}px) {
     grid-template-rows: repeat(5, auto);
     grid-template-columns: repeat(5, 1fr);
   }
