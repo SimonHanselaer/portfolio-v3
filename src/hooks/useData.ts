@@ -1,9 +1,10 @@
 import useSWR from "swr";
-import { contentful } from "@/utils";
-import { filter, groupBy, sortBy } from "lodash";
+import { groupBy, sortBy } from "lodash";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-type IContentType = "project" | "skill" | "information" | "contact";
+import { contentful, formatPeriod } from "@/utils";
+
+type IContentType = "project" | "skill" | "experience" | "contact";
 
 export type IProject = {
   title: string;
@@ -27,14 +28,15 @@ export type ISkills = { [key: string]: ISkill[] };
 export type IContactLink = { link: string; icon: string; id: number };
 export type IContactLinks = IContactLink[];
 
-export type IInformationItem = {
-  id: number;
+export type IExperienceItem = {
   title: string;
-  text: string;
-
+  period: string;
+  description: string;
+  tags: string[];
   link: string;
+  internship: boolean;
 };
-export type IInformationItems = IInformationItem[];
+export type IExperienceItems = IExperienceItem[];
 
 type IBaseData = { isLoading: boolean; isError: any };
 
@@ -51,8 +53,8 @@ export function useData(
   contentType: "contact"
 ): IBaseData & { links: IContactLinks };
 export function useData(
-  contentType: "information"
-): IBaseData & { items: IInformationItems };
+  contentType: "experience"
+): IBaseData & { items: IExperienceItems };
 export function useData(contentType: IContentType) {
   const { data, isLoading, error } = useSWR(contentType, fetcher, {
     revalidateOnFocus: false,
@@ -117,17 +119,21 @@ export function useData(contentType: IContentType) {
         isLoading,
         isError: error,
       };
-    case "information":
+    case "experience":
       return {
-        items: sortBy(
-          data?.items.map((item) => ({
-            id: item.fields.id,
-            title: item.fields.title,
-            link: item.fields.link,
-            text: documentToReactComponents(item.fields.text as any),
-          })) as IInformationItems,
-          "id"
-        ),
+        items: sortBy(data?.items, "fields.startDate").map((item) => ({
+          title: item.fields.name,
+          link: item.fields.link,
+          tags: item.fields.tags,
+          period: formatPeriod(
+            item.fields.startDate as string,
+            item.fields.endDate as string | undefined
+          ),
+          internship: !!item.fields.internship,
+          description: documentToReactComponents(
+            item.fields.description as any
+          ),
+        })) as IExperienceItems,
         isLoading,
         isError: error,
       };

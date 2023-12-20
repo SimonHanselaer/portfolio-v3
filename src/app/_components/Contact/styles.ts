@@ -1,5 +1,7 @@
 import styled from "styled-components";
-import { getBackground } from "@/utils/styles";
+
+import { Card } from "@/components";
+import { getBackground } from "@/utils";
 
 export const Section = styled.section`
   grid-area: contact;
@@ -22,15 +24,10 @@ export const ContactLinks = styled.ul`
   margin-top: ${({ theme }) => theme.spacing.s}px;
 `;
 
-export const ContactLink = styled.li`
+export const ContactLink = styled(Card)`
   display: flex;
   align-items: center;
   justify-content: center;
 
   height: 100%;
-
-  backdrop-filter: blur(20px);
-  border-radius: ${({ theme }) => theme.spacing.s}px;
-  box-shadow: ${({ theme }) => theme.boxShadows.primary};
-  background: ${({ theme }) => theme.colors.gradients.secondary};
 `;

@@ -5,7 +5,14 @@ import styled from "styled-components";
 import { Heading } from "@/theme";
 import { Icon } from "@/components";
 import { colors } from "@/theme/foundations";
-import { Contact, Intro, Projects, Skills, About, CV } from "@/app/_components";
+import {
+  Contact,
+  Intro,
+  Projects,
+  Skills,
+  Experience,
+  CV,
+} from "@/app/_components";
 
 const Main = styled.main`
   padding: 0 ${(p) => p.theme.spacing.xl}px ${(p) => p.theme.spacing.m}px;
@@ -52,7 +59,7 @@ export default function Home() {
         <Skills />
         <Projects />
         <Contact />
-        {/*<About />*/}
+        <Experience />
         <CV />
       </Content>
     </Main>

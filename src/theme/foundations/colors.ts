@@ -5,7 +5,13 @@ const base = {
   primary: "#001D3D",
 };
 
-const gradients = {
+const accent = {
+  primary: "#ab87ff",
+  secondary: "#ecb0e1",
+  tertiary: "#bbd5ed",
+};
+
+const gradient = {
   primary: {
     start: "#d3dae2",
     mid: "#f5f6f5",
@@ -15,15 +21,18 @@ const gradients = {
     "linear-gradient(108.84deg, rgba(255, 255, 255, 0.4) 3.96%, rgba(255, 255, 255, 0.1) 95.1%)",
 };
 
-export const colors = {
+export const colors: Colors = {
   base,
-  gradients,
+  accent,
+  gradient,
 };
 
-type BaseColors = keyof typeof base;
-type GradientColors = keyof typeof gradients;
+export type BaseColors = keyof typeof base;
+export type GradientColors = keyof typeof gradient;
+export type AccentColors = keyof typeof accent;
 
 export type Colors = {
-  base: { [key in BaseColors]: string };
-  gradients: typeof gradients;
+  base: typeof base;
+  accent: typeof accent;
+  gradient: typeof gradient;
 };

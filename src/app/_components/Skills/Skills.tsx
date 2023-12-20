@@ -1,7 +1,7 @@
 import { range } from "lodash";
 
 import { Heading } from "@/theme";
-import { ISkill, useData } from "@/utils/hooks";
+import { ISkill, useData } from "@/hooks";
 
 import { SkillCard } from "./components";
 import { Wrapper, Cards } from "./styles";

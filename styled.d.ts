@@ -13,6 +13,7 @@ declare module "styled-components" {
     colors: Colors;
     fonts: Fonts;
     fontSizes: typeof fontSizes;
+    space: typeof spacing;
     spacing: typeof spacing;
     mediaQueries: typeof mediaQueries;
     boxShadows: typeof boxShadows;

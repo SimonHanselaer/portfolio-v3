@@ -1,10 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { IProject } from "@/utils/hooks";
+import { Tag } from "@/components";
+import { IProject } from "@/hooks";
 import { Subtitle, Text } from "@/theme";
 
-import { Card, TagsContainer, TagWrapper } from "./styles";
+import { Card, TagsContainer } from "./styles";
 
 export const ProjectCard = ({
   title,
@@ -15,12 +16,12 @@ export const ProjectCard = ({
 }: IProject) => {
   return (
     <Link href={href} target="_blank">
-      <Card>
+      <Card as="li">
         <TagsContainer>
           {tags.map((tag, index) => (
-            <TagWrapper key={`tag-${index}`} color={tag.color}>
+            <Tag key={`tag-${index}`} color="primary">
               {tag.name}
-            </TagWrapper>
+            </Tag>
           ))}
         </TagsContainer>
         <Image

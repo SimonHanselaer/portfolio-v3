@@ -1,6 +1,8 @@
 import styled from "styled-components";
-import { getBackground } from "@/utils/styles";
+
 import { Text } from "@/theme";
+import { getBackground } from "@/utils";
+import { Card as StyledCard, Tag } from "@/components";
 
 export const Section = styled.section`
   grid-area: about;
@@ -11,27 +13,23 @@ export const Section = styled.section`
 `;
 
 export const ItemContainer = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(3, 344px);
-  gap: ${({ theme }) => theme.spacing.xl}px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: ${({ theme }) => theme.spacing.s}px;
 
   margin-top: ${({ theme }) => theme.spacing.m}px;
 
-  @media (max-width: ${({ theme }) => theme.mediaQueries.xl}px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (max-width: ${({ theme }) => theme.mediaQueries.l}px) {
-    grid-template-columns: repeat(1, 1fr);
-  }
+  max-width: 448px;
 `;
 
-export const Item = styled.li`
-  max-width: 344px;
+export const Card = styled(StyledCard)`
+  padding: ${({ theme }) => theme.spacing.m}px;
+`;
 
-  @media (max-width: ${({ theme }) => theme.mediaQueries.xl}px) {
-    max-width: 400px;
-  }
+export const PeriodWrapper = styled(Tag)`
+  position: absolute;
+  top: ${({ theme }) => theme.spacing.s}px;
+  right: ${({ theme }) => theme.spacing.s}px;
 `;
 
 export const StyledText = styled(Text)`

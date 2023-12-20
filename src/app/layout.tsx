@@ -1,4 +1,4 @@
-import "@/utils/styles/reset.css";
+import "@/styles/reset.css";
 
 import { ThemeProvider } from "@/theme";
 import { StyledComponentsRegistry } from "@/utils";

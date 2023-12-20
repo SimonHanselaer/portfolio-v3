@@ -1,3 +1,5 @@
+"use client";
+
 import { css, DefaultTheme } from "styled-components";
 
 type IRotation = "north" | "east" | "south" | "west";
@@ -26,9 +28,9 @@ export const getBackground = ({
     border-radius: 12px;
     background: linear-gradient(
       ${getRotation(rotation)}deg,
-      ${theme.colors.gradients.primary.start} ${Math.random() * 15}%,
-      ${theme.colors.gradients.primary.mid} ${Math.random() * (65 - 35) + 35}%,
-      ${theme.colors.gradients.primary.end} ${Math.random() * (100 - 85) + 85}%
+      ${theme.colors.gradient.primary.start} ${Math.random() * 15}%,
+      ${theme.colors.gradient.primary.mid} ${Math.random() * (65 - 35) + 35}%,
+      ${theme.colors.gradient.primary.end} ${Math.random() * (100 - 85) + 85}%
     );
   `;
 };

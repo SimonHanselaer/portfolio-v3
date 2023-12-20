@@ -3,10 +3,11 @@ import { colors, fonts, fontSizes, mediaQueries, spacing } from "./foundations";
 import { boxShadows } from "@/theme/foundations/boxShadows";
 
 export const theme: DefaultTheme = {
-  colors,
   fonts,
+  colors,
   fontSizes,
-  spacing,
-  mediaQueries,
   boxShadows,
+  mediaQueries,
+  spacing,
+  space: spacing,
 } as const;

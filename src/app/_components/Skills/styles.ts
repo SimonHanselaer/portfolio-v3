@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { getBackground } from "@/utils/styles";
+import { getBackground } from "@/utils";
 
 export const Wrapper = styled.section`
   grid-area: skills;

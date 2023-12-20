@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { Heading } from "@/theme";
-import { useData } from "@/utils/hooks";
+import { useData } from "@/hooks";
 
 import { Section, ContactLinks, ContactLink } from "./styles";
 

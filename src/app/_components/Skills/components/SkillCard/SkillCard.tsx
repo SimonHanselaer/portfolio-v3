@@ -9,7 +9,7 @@ interface ISkillCard {
 
 export const SkillCard = ({ title, img }: ISkillCard) => {
   return (
-    <Card>
+    <Card as="li">
       <Image src={img} alt={title} height={32} width={32} />
     </Card>
   );

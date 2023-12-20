@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { getBackground } from "@/utils/styles";
+
 import { Subtitle } from "@/theme";
+import { getBackground } from "@/utils";
 
 export const Wrapper = styled.section`
   grid-area: intro;

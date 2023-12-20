@@ -1,5 +1,5 @@
 import { Heading } from "@/theme";
-import { useData } from "@/utils/hooks";
+import { useData } from "@/hooks";
 
 import { Wrapper, Cards } from "./styles";
 import { ProjectCard } from "./components";
