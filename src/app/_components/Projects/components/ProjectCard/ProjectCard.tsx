@@ -1,11 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { Tag } from "@/components";
+import { Flex, Tag } from "@/components";
 import { IProject } from "@/hooks";
 import { Subtitle, Text } from "@/theme";
 
-import { Card, TagsContainer } from "./styles";
+import { Card, YearContainer } from "./styles";
 
 export const ProjectCard = ({
   title,
@@ -13,17 +13,14 @@ export const ProjectCard = ({
   thumbnail,
   href,
   tags,
+  year,
 }: IProject) => {
   return (
     <Link href={href} target="_blank">
       <Card as="li">
-        <TagsContainer>
-          {tags.map((tag, index) => (
-            <Tag key={`tag-${index}`} color="primary">
-              {tag.name}
-            </Tag>
-          ))}
-        </TagsContainer>
+        <YearContainer>
+          <Tag color="primary">{year}</Tag>
+        </YearContainer>
         <Image
           src={thumbnail}
           alt={title}
@@ -36,6 +33,13 @@ export const ProjectCard = ({
           <Subtitle>{title}</Subtitle>
           <Text>{description}</Text>
         </div>
+        <Flex gap="xxs" mt="xs">
+          {tags.map((tag, index) => (
+            <Tag key={`tag-${index}`} color="secondary">
+              {tag}
+            </Tag>
+          ))}
+        </Flex>
       </Card>
     </Link>
   );

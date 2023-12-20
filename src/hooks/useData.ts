@@ -12,7 +12,8 @@ export type IProject = {
   thumbnail: string;
   priority: number;
   href: string;
-  tags: { name: string; color: string }[];
+  tags: string[];
+  year: string;
 };
 export type IProjects = IProject[];
 
@@ -71,6 +72,7 @@ export function useData(contentType: IContentType) {
               priority: item.fields.priority,
               href: (item.fields.resources as { href: string }[])?.[0]?.href,
               tags: item.fields.tags,
+              year: item.fields.year,
               thumbnail: (item.fields.icon as any)?.fields.file.url.replace(
                 "//",
                 "https://"

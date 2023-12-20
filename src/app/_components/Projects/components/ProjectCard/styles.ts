@@ -7,18 +7,11 @@ export const Card = styled(StyledCard)`
   flex-direction: column;
   justify-content: space-between;
 
-  padding: ${(p) => p.theme.spacing.m}px;
+  padding: ${({ theme }) => theme.spacing.m}px;
 `;
 
-export const TagsContainer = styled.ul`
+export const YearContainer = styled.aside`
   position: absolute;
-  top: ${(p) => p.theme.spacing.s}px;
-  right: ${(p) => p.theme.spacing.s}px;
-
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 128px;
-  justify-content: flex-end;
-
-  gap: ${(p) => p.theme.spacing.xxs}px;
+  top: ${({ theme }) => theme.spacing.s}px;
+  right: ${({ theme }) => theme.spacing.s}px;
 `;
