@@ -1,8 +1,7 @@
 import "@/styles/reset.css";
 
-import { ThemeProvider } from "@/theme";
+import { ThemeProvider, fonts } from "@/theme";
 import { StyledComponentsRegistry } from "@/utils";
-import { fonts } from "@/theme/foundations";
 
 export const metadata = {
   title: "Simon Hanselaer",

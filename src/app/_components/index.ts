@@ -1,4 +1,3 @@
-export * from "./CV";
 export * from "./Intro";
 export * from "./Skills";
 export * from "./Contact";

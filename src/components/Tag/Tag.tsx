@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { Tag as StyledTag } from "@/theme";
-import { AccentColors } from "@/theme/foundations";
+import { AccentColors, Tag as StyledTag } from "@/theme";
 
 export const Tag = styled(StyledTag)<{ color: AccentColors }>`
   width: min-content;

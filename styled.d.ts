@@ -6,7 +6,7 @@ import {
   spacing,
   mediaQueries,
   boxShadows,
-} from "@/theme/foundations";
+} from "@/theme";
 
 declare module "styled-components" {
   export interface DefaultTheme {

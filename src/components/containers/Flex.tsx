@@ -10,7 +10,7 @@ import {
 } from "styled-system";
 import styled from "styled-components";
 
-import { spacing } from "@/theme/foundations";
+import { spacing } from "@/theme";
 
 import { Box, BoxProps } from "./Box";
 

@@ -5,7 +5,7 @@ import { getBackground } from "@/utils";
 import { Card as StyledCard, Tag } from "@/components";
 
 export const Section = styled.section`
-  grid-area: about;
+  grid-area: experience;
 
   padding: ${({ theme }) => theme.spacing.l}px;
 

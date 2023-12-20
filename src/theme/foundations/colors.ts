@@ -27,7 +27,7 @@ export const colors: Colors = {
   gradient,
 };
 
-export type BaseColors = keyof typeof base;
+export type BaseColor = keyof typeof base;
 export type GradientColors = keyof typeof gradient;
 export type AccentColors = keyof typeof accent;
 
