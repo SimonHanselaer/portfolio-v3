@@ -7,3 +7,5 @@ export const spacing = {
   xl: 32 as const,
   xxl: 64 as const,
 };
+
+export type Spacing = keyof typeof spacing;

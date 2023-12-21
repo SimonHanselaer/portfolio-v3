@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <Main>
       <Header>
-        <Icon name="Logo" size={32} color="primary" />
+        <Icon name="Logo" size="xl" />
         <Heading as="h1">Simon Hanselaer</Heading>
       </Header>
       <Content>

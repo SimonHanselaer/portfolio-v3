@@ -1,25 +1,29 @@
 import Link from "next/link";
-import Image from "next/image";
+import { Icon } from "@/components";
+import { Section, ContactLinks } from "./styles";
+import styled from "styled-components";
 
-import { Heading } from "@/theme";
-import { useData } from "@/hooks";
+const StyledIcon = styled(Icon)`
+  color: ${({ theme }) => theme.colors.base.primary}90 !important;
 
-import { Section, ContactLinks, ContactLink } from "./styles";
+  :hover {
+    color: ${({ theme }) => theme.colors.base.primary} !important;
+  }
+`;
 
 export const Contact = () => {
-  const { links, isLoading, isError } = useData("contact");
-
   return (
     <Section>
-      <Heading as="h2">Contact</Heading>
       <ContactLinks>
-        {links?.map((item, index) => (
-          <Link key={`link-${index}`} href={item.link}>
-            <ContactLink>
-              <Image src={item.icon} alt={item.link} height={32} width={32} />
-            </ContactLink>
-          </Link>
-        ))}
+        <Link href="https://www.linkedin.com/in/simon-hanselaer-09863b194/">
+          <StyledIcon name="LinkedIn" size="l" />
+        </Link>
+        <Link href="https://github.com/SimonHanselaer">
+          <StyledIcon name="Github" size="l" />
+        </Link>
+        <Link href="mailto:simon.hanselaer@hotmail.com">
+          <StyledIcon name="Mail" size="l" />
+        </Link>
       </ContactLinks>
     </Section>
   );

@@ -4,7 +4,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 import { contentful, formatPeriod } from "@/utils";
 
-type IContentType = "project" | "skill" | "experience" | "contact";
+type IContentType = "project" | "skill" | "experience";
 
 export type IProject = {
   title: string;
@@ -50,9 +50,6 @@ export function useData(
   contentType: "project"
 ): IBaseData & { projects: IProjects };
 export function useData(contentType: "skill"): IBaseData & { skills: ISkills };
-export function useData(
-  contentType: "contact"
-): IBaseData & { links: IContactLinks };
 export function useData(
   contentType: "experience"
 ): IBaseData & { items: IExperienceItems };
@@ -101,22 +98,6 @@ export function useData(contentType: IContentType) {
             "priority"
           ),
           "type"
-        ),
-        isLoading,
-        isError: error,
-      };
-    case "contact":
-      return {
-        links: sortBy(
-          data?.items.map((item) => ({
-            link: item.fields.link,
-            icon: (item.fields?.icon as any)?.fields.file.url.replace(
-              "//",
-              "https://"
-            ),
-            id: item.fields.id,
-          })) as IContactLinks,
-          "id"
         ),
         isLoading,
         isError: error,
