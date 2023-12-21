@@ -13,6 +13,9 @@ import { Heading } from "@/theme";
 import { Icon } from "@/components";
 
 const Main = styled.main`
+  max-width: ${({ theme }) => theme.mediaQueries.xl}px;
+  margin: 0 auto;
+
   padding: 0 ${(p) => p.theme.spacing.xl}px ${(p) => p.theme.spacing.m}px;
 
   @media (max-width: ${(p) => p.theme.mediaQueries.s}px) {

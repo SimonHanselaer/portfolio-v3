@@ -6,9 +6,9 @@ const base = {
 };
 
 const accent = {
-  primary: "#ab87ff",
-  secondary: "#ecb0e1",
-  tertiary: "#bbd5ed",
+  primary: "#F24E1E",
+  secondary: "#A259FF",
+  tertiary: "#0ACF83",
 };
 
 const gradient = {

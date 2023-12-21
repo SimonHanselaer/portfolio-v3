@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { Text } from "@/theme";
-import { Card as StyledCard, Tag } from "@/components";
+import { Card as StyledCard, Flex, Tag } from "@/components";
 
 export const ItemContainer = styled.ul`
   display: flex;
@@ -11,6 +11,16 @@ export const ItemContainer = styled.ul`
 
 export const Card = styled(StyledCard)`
   padding: ${({ theme }) => theme.spacing.m}px;
+`;
+
+export const HeaderWrapper = styled(Flex)`
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing.xs}px;
+
+  @media (max-width: ${({ theme }) => theme.mediaQueries.s}px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 export const PeriodWrapper = styled(Tag)`

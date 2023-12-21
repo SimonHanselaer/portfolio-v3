@@ -10,6 +10,12 @@ const Wrapper = styled.section`
   gap: ${({ theme }) => theme.spacing.xl}px;
 
   margin-top: ${({ theme }) => theme.spacing.m}px;
+
+  @media (max-width: ${({ theme }) => theme.mediaQueries.m}px) {
+    grid-template-columns: 1fr;
+
+    grid-template-rows: repeat(2, auto);
+  }
 `;
 
 export const Experience = () => {
