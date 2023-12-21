@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
-import { Card } from "@/components";
-import { getBackground } from "@/utils";
+import { Icon } from "@/components";
 
 export const Section = styled.section`
   grid-area: contact;
@@ -21,4 +20,12 @@ export const ContactLinks = styled.ul`
   display: flex;
   align-items: center;
   gap: ${({ theme }) => theme.spacing.m}px;
+`;
+
+export const StyledIcon = styled(Icon)`
+  color: ${({ theme }) => theme.colors.base.primary}90 !important;
+
+  :hover {
+    color: ${({ theme }) => theme.colors.base.primary} !important;
+  }
 `;

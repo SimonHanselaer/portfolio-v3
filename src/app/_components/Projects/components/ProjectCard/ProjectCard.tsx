@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { Flex, Tag } from "@/components";
 import { IProject } from "@/hooks";
 import { Subtitle, Text } from "@/theme";
+import { Flex, Tag } from "@/components";
 
 import { Card, YearContainer } from "./styles";
 

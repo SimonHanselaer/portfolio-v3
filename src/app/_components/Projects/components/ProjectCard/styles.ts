@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Tag } from "@/theme";
 import { Card as StyledCard } from "@/components";
 
 export const Card = styled(StyledCard)`

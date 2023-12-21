@@ -1,6 +1,6 @@
 import { Logo } from "./Logo";
+import { Mail } from "./Mail";
 import { Github } from "./Github";
 import { LinkedIn } from "./LinkedIn";
-import { Mail } from "./Mail";
 
 export const icons = { Logo, Github, LinkedIn, Mail } as const;

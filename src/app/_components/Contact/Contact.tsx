@@ -1,15 +1,6 @@
 import Link from "next/link";
-import { Icon } from "@/components";
-import { Section, ContactLinks } from "./styles";
-import styled from "styled-components";
 
-const StyledIcon = styled(Icon)`
-  color: ${({ theme }) => theme.colors.base.primary}90 !important;
-
-  :hover {
-    color: ${({ theme }) => theme.colors.base.primary} !important;
-  }
-`;
+import { Section, ContactLinks, StyledIcon } from "./styles";
 
 export const Contact = () => {
   return (

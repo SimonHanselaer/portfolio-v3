@@ -4,10 +4,12 @@ export const Main = styled.main`
   max-width: ${({ theme }) => theme.mediaQueries.xl}px;
   margin: 0 auto;
 
-  padding: 0 ${(p) => p.theme.spacing.xl}px ${(p) => p.theme.spacing.m}px;
+  padding: 0 ${({ theme }) => theme.spacing.xl}px
+    ${({ theme }) => theme.spacing.m}px;
 
-  @media (max-width: ${(p) => p.theme.mediaQueries.s}px) {
-    padding: 0 ${(p) => p.theme.spacing.m}px ${(p) => p.theme.spacing.m}px;
+  @media (max-width: ${({ theme }) => theme.mediaQueries.s}px) {
+    padding: 0 ${({ theme }) => theme.spacing.m}px
+      ${({ theme }) => theme.spacing.m}px;
   }
 `;
 
@@ -17,7 +19,7 @@ export const Header = styled.header`
   display: flex;
   align-items: center;
 
-  gap: ${(p) => p.theme.spacing.s}px;
+  gap: ${({ theme }) => theme.spacing.s}px;
 `;
 
 export const Content = styled.section`
