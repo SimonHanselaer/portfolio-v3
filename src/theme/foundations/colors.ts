@@ -48,7 +48,7 @@ export namespace dark {
       end: "#014F86",
     },
     secondary:
-      "linear-gradient(108.84deg, rgba(0, 0, 0, 0.4) 3.96%, rgba(0, 0, 0, 0.1) 95.1%)",
+      "linear-gradient(108.84deg, rgba(0, 0, 0, 0.4) 3.96%, rgba(0, 0, 0, 0.2) 95.1%)",
   };
 
   export const colors: Colors = {

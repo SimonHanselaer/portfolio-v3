@@ -1,4 +1,4 @@
-import { Bebas_Neue, Sen } from "next/font/google";
+import { Bebas_Neue, Sen, Josefin_Sans } from "next/font/google";
 
 const sen = Sen({ weight: ["400", "700"], subsets: ["latin"] });
 const bebasNeue = Bebas_Neue({ weight: ["400"], subsets: ["latin"] });

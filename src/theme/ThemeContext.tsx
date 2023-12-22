@@ -4,6 +4,7 @@ import React, {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useState,
 } from "react";
@@ -32,7 +33,9 @@ interface ThemeProviderProps {
 }
 
 export function ThemeContextProvider({ children }: ThemeProviderProps) {
-  const [mode, setMode] = useState<IMode>("light");
+  const [mode, setMode] = useState<IMode>(
+    new Date().getHours() >= 17 ? "dark" : "light"
+  );
 
   const theme = useMemo(
     () =>
@@ -46,6 +49,10 @@ export function ThemeContextProvider({ children }: ThemeProviderProps) {
   const toggleMode = useCallback(() => {
     setMode((prevState) => (prevState === "light" ? "dark" : "light"));
   }, []);
+
+  useEffect(() => {
+    document.body.style.backgroundColor = theme.colors.base.secondary;
+  }, [theme.colors.base.secondary]);
 
   const value = useMemo(
     () => ({ mode, theme, toggleMode }),
