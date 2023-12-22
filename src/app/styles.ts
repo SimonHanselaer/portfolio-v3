@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const Main = styled.main`
+  background-color: ${({ theme }) => theme.colors.base.secondary};
+
   max-width: ${({ theme }) => theme.mediaQueries.xl}px;
   margin: 0 auto;
 
@@ -18,8 +20,7 @@ export const Header = styled.header`
 
   display: flex;
   align-items: center;
-
-  gap: ${({ theme }) => theme.spacing.s}px;
+  justify-content: space-between;
 `;
 
 export const Content = styled.section`

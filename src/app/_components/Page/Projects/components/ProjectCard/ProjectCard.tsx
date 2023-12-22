@@ -17,7 +17,7 @@ export const ProjectCard = ({
 }: IProject) => {
   return (
     <Link href={href} target="_blank">
-      <Card as="li">
+      <Card as="li" hoverEffect>
         <YearContainer>
           <Tag color="primary">{year}</Tag>
         </YearContainer>

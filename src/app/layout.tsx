@@ -2,11 +2,11 @@ import "@/styles/reset.css";
 
 import { ThemeProvider, fonts } from "@/theme";
 import { StyledComponentsRegistry } from "@/utils";
+import { ThemeConsumer } from "styled-components";
 
 export const metadata = {
   title: "Simon Hanselaer",
-  description:
-    "Passionate about coding and pushing my skills to the next level.",
+  description: "Front-end developer",
 };
 
 interface IRootLayout {
@@ -16,13 +16,15 @@ interface IRootLayout {
 export default function RootLayout({ children }: IRootLayout) {
   return (
     <html lang="en">
-      <body
-        className={`${fonts.primary.className} ${fonts.secondary.className}`}
-      >
-        <ThemeProvider>
-          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-        </ThemeProvider>
-      </body>
+      <ThemeProvider>
+        <StyledComponentsRegistry>
+          <body
+            className={`${fonts.primary.className} ${fonts.secondary.className}`}
+          >
+            {children}
+          </body>
+        </StyledComponentsRegistry>
+      </ThemeProvider>
     </html>
   );
 }

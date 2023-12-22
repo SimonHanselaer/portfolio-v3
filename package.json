@@ -10,14 +10,14 @@
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.17.2",
+    "@emotion/is-prop-valid": "^1.2.1",
     "@supabase/supabase-js": "^2.38.0",
     "@types/express": "^4.17.18",
     "@types/lodash": "^4.14.198",
     "@types/node": "20.2.1",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
-    "@types/styled-components": "^5.1.26",
-    "@types/styled-system": "^5.1.16",
+    "@types/styled-system": "^5.1.22",
     "axios": "^1.5.0",
     "contentful": "^10.2.0",
     "dotenv": "^16.3.1",
@@ -30,8 +30,9 @@
     "prettier": "^2.8.8",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "styled-components": "^6.0.0-rc.1",
+    "styled-components": "6.0.0",
     "styled-system": "^5.1.5",
+    "stylis": "^4.3.0",
     "swr": "^2.1.5",
     "typescript": "5.0.4"
   }

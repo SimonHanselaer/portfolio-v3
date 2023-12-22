@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import { useServerInsertedHTML } from "next/navigation";
 import { ServerStyleSheet, StyleSheetManager } from "styled-components";
 
+import { shouldForwardProp } from "@/utils/shouldForwardProp";
+
 interface IStyledComponentsRegistry {
   children: React.ReactNode;
 }
@@ -24,7 +26,10 @@ export const StyledComponentsRegistry = ({
   if (typeof window !== "undefined") return <>{children}</>;
 
   return (
-    <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>
+    <StyleSheetManager
+      sheet={styledComponentsStyleSheet.instance}
+      shouldForwardProp={shouldForwardProp}
+    >
       {children}
     </StyleSheetManager>
   );

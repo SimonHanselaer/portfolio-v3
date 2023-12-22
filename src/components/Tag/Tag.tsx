@@ -7,6 +7,6 @@ export const Tag = styled(StyledTag)<{ color: AccentColors }>`
   padding: 0 ${({ theme }) => theme.spacing.xs}px;
 
   border-radius: 6px;
-  color: ${({ theme }) => theme.colors.base.white};
+  color: ${({ theme }) => theme.colors.base.secondary};
   background-color: ${({ theme, color }) => theme.colors.accent[color]};
 `;

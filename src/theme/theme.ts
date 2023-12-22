@@ -1,7 +1,6 @@
 import { DefaultTheme } from "styled-components";
 
 import {
-  colors,
   fonts,
   fontSizes,
   mediaQueries,
@@ -9,9 +8,8 @@ import {
   boxShadows,
 } from "./foundations";
 
-export const theme: DefaultTheme = {
+export const theme: Omit<DefaultTheme, "colors"> = {
   fonts,
-  colors,
   fontSizes,
   boxShadows,
   mediaQueries,

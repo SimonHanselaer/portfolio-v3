@@ -1,31 +1,42 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
+import { SpaceProps } from "styled-system";
 
 import { icons } from "@/icons";
-import { BaseColor, Spacing, theme } from "@/theme";
+import { Box } from "@/components";
+import { BaseColors, Spacing, theme } from "@/theme";
 
 export type IconName = keyof typeof icons;
 
-interface IIcon {
+type IIcon = SpaceProps & {
   name: IconName;
   size?: Spacing;
-  color?: BaseColor;
-}
+  color?: BaseColors;
+  onClick?: () => void;
+};
 
-const Wrapper = styled.div<{ color: BaseColor; size: Spacing }>`
+const Wrapper = styled.div<{
+  color: BaseColors;
+  size: Spacing;
+  onClick?: () => void;
+}>`
   height: ${({ theme, size }) => theme.spacing[size]}px;
   width: ${({ theme, size }) => theme.spacing[size]}px;
   color: ${({ theme, color }) => theme.colors.base[color]};
+  cursor: ${({ onClick }) => (!!onClick ? "pointer" : "auto")};
 `;
 
 export const Icon = ({
   name,
   size = "m",
   color = "primary",
+  onClick,
   ...rest
 }: IIcon) => {
   return (
-    <Wrapper color={color} size={size} {...rest}>
-      {icons[name]({ size: theme.spacing[size] })}
-    </Wrapper>
+    <Box {...rest}>
+      <Wrapper color={color} size={size} onClick={onClick} {...rest}>
+        {icons[name]({ size: theme.spacing[size] })}
+      </Wrapper>
+    </Box>
   );
 };

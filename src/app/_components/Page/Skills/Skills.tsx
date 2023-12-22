@@ -11,7 +11,11 @@ const getCards = (skills: ISkill[] | undefined) => {
     if (skills?.[index]) {
       const skill = skills[index];
       return (
-        <SkillCard key={skill.title} title={skill.title} img={skill.logo} />
+        <SkillCard
+          key={`skill-${index}`}
+          title={skill.title}
+          img={skill.logo}
+        />
       );
     }
     return <span key={index} />;

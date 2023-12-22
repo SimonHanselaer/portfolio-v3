@@ -23,6 +23,8 @@ export const ContactLinks = styled.ul`
 `;
 
 export const StyledIcon = styled(Icon)`
+  cursor: pointer;
+
   color: ${({ theme }) => theme.colors.base.primary}90 !important;
 
   :hover {

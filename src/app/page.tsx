@@ -7,17 +7,27 @@ import {
   Projects,
   Experience,
 } from "@/app/_components";
-import { Heading } from "@/theme";
-import { Icon } from "@/components";
+import { Flex, Icon } from "@/components";
+import { Heading, useThemeContext } from "@/theme";
 
 import { Main, Header, Content } from "./styles";
 
 export default function Home() {
+  const { toggleMode, mode } = useThemeContext();
+
   return (
     <Main>
       <Header>
-        <Icon name="Logo" size="xl" />
-        <Heading as="h1">Simon Hanselaer</Heading>
+        <Flex alignItems="center" gap="s">
+          <Icon name="Logo" size="xl" />
+          <Heading as="h1">Simon Hanselaer</Heading>
+        </Flex>
+        <Icon
+          p="m"
+          size="l"
+          onClick={toggleMode}
+          name={mode === "light" ? "DarkMode" : "LightMode"}
+        />
       </Header>
       <Content>
         <Intro />
