@@ -22,11 +22,7 @@ export interface ThemeContextProps {
   toggleMode: () => void;
 }
 
-export const ThemeContext = createContext<ThemeContextProps>({
-  mode: "light",
-  theme: { ...defaultTheme, colors: light.colors } as DefaultTheme,
-  toggleMode: () => {},
-});
+export const ThemeContext = createContext<ThemeContextProps>({} as any);
 
 interface ThemeProviderProps {
   children: React.ReactElement;
