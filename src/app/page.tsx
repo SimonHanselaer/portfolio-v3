@@ -15,8 +15,10 @@ import { Main, Header, Content } from "./styles";
 export default function Home() {
   const { toggleMode, mode } = useThemeContext();
 
+  console.log("mode", mode);
+
   return (
-    <Main>
+    <Main key={mode}>
       <Header>
         <Flex alignItems="center" gap="s">
           <Icon name="Logo" size="xl" />
