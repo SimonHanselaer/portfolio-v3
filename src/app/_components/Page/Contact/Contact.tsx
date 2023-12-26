@@ -6,10 +6,13 @@ export const Contact = () => {
   return (
     <Section>
       <ContactLinks>
-        <Link href="https://www.linkedin.com/in/simon-hanselaer-09863b194/">
+        <Link
+          href="https://www.linkedin.com/in/simon-hanselaer-09863b194/"
+          target="_blank"
+        >
           <StyledIcon name="LinkedIn" size="l" />
         </Link>
-        <Link href="https://github.com/SimonHanselaer">
+        <Link href="https://github.com/SimonHanselaer" target="_blank">
           <StyledIcon name="Github" size="l" />
         </Link>
         <Link href="mailto:simon.hanselaer@hotmail.com">
