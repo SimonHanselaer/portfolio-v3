@@ -14,11 +14,13 @@ interface IThemeProvider {
 }
 
 export const Component = ({ children }: IThemeProvider) => {
-  const { theme } = useThemeContext();
+  const { theme, mode } = useThemeContext();
 
   return (
     <StyleSheetManager shouldForwardProp={shouldForwardProp}>
-      <Provider theme={theme}>{children}</Provider>
+      <Provider theme={theme} key={`themeProvider-${mode}`}>
+        {children}
+      </Provider>
     </StyleSheetManager>
   );
 };
