@@ -24,7 +24,6 @@ export interface FlexProps
   gap?: keyof typeof spacing;
 }
 
-// @ts-ignore
 export const Flex = styled(Box)<FlexProps>`
   display: flex;
   ${({ theme, gap }) => (gap ? `gap: ${theme.spacing[gap]}px;` : "")}

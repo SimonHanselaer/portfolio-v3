@@ -24,19 +24,19 @@ export function useData(contentType: IContentType) {
       return {
         projects: mapProjects(data),
         isLoading,
-        isError: error,
+        isError: !!error,
       };
     case "skill":
       return {
         skills: mapSkills(data),
         isLoading,
-        isError: error,
+        isError: !!error,
       };
     case "experience":
       return {
         items: mapExperience(data),
         isLoading,
-        isError: error,
+        isError: !!error,
       };
   }
 }

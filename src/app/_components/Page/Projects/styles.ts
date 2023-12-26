@@ -4,9 +4,14 @@ import { getBackground } from "@/utils";
 export const Wrapper = styled.section`
   grid-area: projects;
 
+  display: flex;
+  flex-direction: column;
+
   padding: ${({ theme }) => theme.spacing.m}px;
 
-  ${({ theme }) => getBackground({ rotation: "east", theme })}
+  min-height: 352px;
+
+  ${({ theme }) => getBackground({ rotation: "east", theme })};
 
   @media (max-width: ${({ theme }) => theme.mediaQueries.m}px) {
     ${({ theme }) => getBackground({ rotation: "east", theme })};

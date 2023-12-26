@@ -7,6 +7,7 @@ const accent = {
 const defaults = {
   base: {
     white: "#FFFFFF",
+    error: "#ED2939",
   },
 };
 
@@ -58,7 +59,7 @@ export namespace dark {
   };
 }
 
-export type BaseColors = "primary" | "secondary" | "white";
+export type BaseColors = "primary" | "secondary" | "white" | "error";
 export type GradientColors = "primary" | "secondary";
 export type AccentColors = keyof typeof accent;
 

@@ -1,6 +1,6 @@
 import { useData } from "@/hooks";
 import { Subtitle } from "@/theme";
-import { Flex, Tag } from "@/components";
+import { Error, Flex, Loading, Tag } from "@/components";
 
 import {
   Card,
@@ -14,6 +14,8 @@ import Link from "next/link";
 export const Overview = () => {
   const { items, isLoading, isError } = useData("experience");
 
+  if (isError) return <Error>Something went wrong!</Error>;
+  if (isLoading) return <Loading />;
   return (
     <ItemContainer>
       {items?.map((item, index) => (
