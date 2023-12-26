@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { useData } from "@/hooks";
 import { Subtitle } from "@/theme";
 import { Error, Flex, Loading, Tag } from "@/components";
@@ -9,7 +11,6 @@ import {
   PeriodWrapper,
   StyledText,
 } from "./styles";
-import Link from "next/link";
 
 export const Overview = () => {
   const { items, isLoading, isError } = useData("experience");
