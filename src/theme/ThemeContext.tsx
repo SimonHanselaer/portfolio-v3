@@ -30,7 +30,7 @@ interface ThemeProviderProps {
 
 export function ThemeContextProvider({ children }: ThemeProviderProps) {
   const [mode, setMode] = useState<IMode>(
-    new Date().getHours() < 12 ? "light" : "dark"
+    new Date().getHours() < 17 ? "light" : "dark"
   );
 
   const toggleMode = useCallback(() => {
