@@ -31,6 +31,14 @@ interface ThemeProviderProps {
 export function ThemeContextProvider({ children }: ThemeProviderProps) {
   const [mode, setMode] = useState<IMode>("dark");
 
+  useEffect(() => {
+    if (new Date().getHours() < 17) setMode("light");
+  }, []);
+
+  const toggleMode = useCallback(() => {
+    setMode((prevState) => (prevState === "light" ? "dark" : "light"));
+  }, []);
+
   const theme = useMemo(
     () =>
       ({
@@ -39,10 +47,6 @@ export function ThemeContextProvider({ children }: ThemeProviderProps) {
       } as DefaultTheme),
     [mode]
   );
-
-  const toggleMode = useCallback(() => {
-    setMode((prevState) => (prevState === "light" ? "dark" : "light"));
-  }, []);
 
   useEffect(() => {
     document.body.style.backgroundColor = theme.colors.base.secondary;
