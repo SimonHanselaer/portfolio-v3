@@ -29,9 +29,7 @@ interface ThemeProviderProps {
 }
 
 export function ThemeContextProvider({ children }: ThemeProviderProps) {
-  const [mode, setMode] = useState<IMode>(
-    new Date().getHours() >= 17 ? "dark" : "light"
-  );
+  const [mode, setMode] = useState<IMode>("dark");
 
   const theme = useMemo(
     () =>
