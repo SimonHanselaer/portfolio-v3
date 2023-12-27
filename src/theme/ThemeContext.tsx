@@ -29,11 +29,9 @@ interface ThemeProviderProps {
 }
 
 export function ThemeContextProvider({ children }: ThemeProviderProps) {
-  const [mode, setMode] = useState<IMode>("dark");
-
-  useEffect(() => {
-    if (new Date().getHours() < 17) setMode("light");
-  }, []);
+  const [mode, setMode] = useState<IMode>(
+    new Date().getHours() < 17 ? "light" : "dark"
+  );
 
   const toggleMode = useCallback(() => {
     setMode((prevState) => (prevState === "light" ? "dark" : "light"));
