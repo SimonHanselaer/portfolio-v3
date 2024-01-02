@@ -16,7 +16,7 @@ export const Intro = () => {
         </Text>
         <Text>
           My journey into coding started by creating Rainmeter skins. During my
-          first (and only) year of ICT teacher training I gained a more in-depth
+          first (and only) year of IT teacher training I gained a more in-depth
           understanding of programming. I decided to fully dive into web
           development by studying Devine (Digital Design & Development).
         </Text>
