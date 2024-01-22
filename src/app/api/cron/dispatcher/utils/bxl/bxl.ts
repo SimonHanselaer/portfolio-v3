@@ -5,8 +5,8 @@ import { createClient } from "@supabase/supabase-js";
 export async function bxl(request: NextRequest) {
   //Create a single supabase client for interacting with your database
   const supabase = createClient(
-    "https://ppgpmnmillhwrpkzltzf.supabase.co",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBwZ3Btbm1pbGxod3Jwa3psdHpmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTYxNTE4MzMsImV4cCI6MjAxMTcyNzgzM30.w6NIc6i1IZPddUkh2RntJGGBIX4kbxwJw4fQ8Sw7-Rs"
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_KEY!
   );
 
   const { data, error } = await supabase
